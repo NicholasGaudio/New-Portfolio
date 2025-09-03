@@ -4,7 +4,8 @@ import './App.css';
 
 const App: React.FC = () => {
   const [time, setTime] = useState<string>(() => new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
-  const [showAbout, setshowAbout] = useState(false)
+  const [showAbout, setshowAbout] = useState(true)
+  const [showPC, setshowPC] = useState(false)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -19,6 +20,11 @@ const App: React.FC = () => {
   return (
     <div className="desktop">
       <div className = "desktop-icons">
+
+          <div className = "icon" onClick={() => setshowPC(true)}> 
+            <img src = "/Photos/pc.png"/>
+            <span>My Computer</span>
+          </div>
 
           <div className = "icon"> 
             <img src = "/Photos/folder.png"/>
@@ -50,6 +56,14 @@ const App: React.FC = () => {
               title="About Me"
               content={<p>About MEEE</p>}
               onClose={() => setshowAbout(false)}
+            />
+          )}
+
+          {showPC && (
+            <DraggablePopup
+              title="My PC"
+              content={<p>About WEBSITE</p>}
+              onClose={() => setshowPC(false)}
             />
           )}
 

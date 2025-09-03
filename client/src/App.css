@@ -143,7 +143,7 @@
   color: white;
   padding: 0.5rem;
   font-weight: bold;
-  cursor: move
+  cursor: url('/Photos/move-cursor.png') 16 16, auto;
 }
 
 .popup-header button {
