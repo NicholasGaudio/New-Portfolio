@@ -62,7 +62,17 @@ const App: React.FC = () => {
           {showPC && (
             <DraggablePopup
               title="My PC"
-              content={<p>About WEBSITE</p>}
+              content={
+                <div>
+                  <p>hi</p>
+                  <div className = "about-icons">
+                    <img src = "/Photos/AWS.png"/>
+                    <img src = "/Photos/Unity.png"/>
+                    <img src = "/Photos/Python.png"/>
+                    <img src = "/Photos/Pygame.png"/>
+                  </div>
+                </div>
+              }
               onClose={() => setshowPC(false)}
             />
           )}

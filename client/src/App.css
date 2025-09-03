@@ -31,7 +31,7 @@
 }
 
 .icon img {
-  width: 3vw;    
+  width: 3vw;    /* little small for laptop, maybe do 4vw for laptop */
   max-width: 64px;  
   height: auto;    
 }
@@ -158,4 +158,21 @@
   padding: 1rem;
   background-color: #c0c0c0;
   align-items: center;
+}
+
+.about-icons {
+  display: flex;
+  gap: 1rem; /* space between icons */
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.about-icons img {
+  flex: 0 0 auto;
+  width: 5vw; /* size of icons */
+  transition: transform 0.2s ease;
+}
+
+.about-icons img:hover {
+  transform: scale(1.1); /* subtle hover zoom */
 }
