@@ -1,0 +1,5 @@
+fastapi[standard]
+motor
+typing
+starlette
+pydantic

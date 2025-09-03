@@ -1,0 +1,161 @@
+
+.desktop {
+  width: 100vw;
+  height: 100vh;
+  background-color: #008080; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; 
+  position: relative;
+  cursor: url('/Photos/mouse.png') 16 16, auto;;
+}
+
+.desktop-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  position: absolute;
+  top: 2vh;
+  left: 2vw;
+}
+
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+  cursor: url('/Photos/hand-mouse.png') 16 16, auto;
+  text-decoration: none; 
+  color: inherit;      
+}
+
+.icon img {
+  width: 3vw;    
+  max-width: 64px;  
+  height: auto;    
+}
+
+.icon span{
+  padding-top: .5vh;
+  font-size: 1.25vh;
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+  color: #fff
+}
+
+
+.taskbar {
+  width: 100%;
+  height: 6vh; 
+  background-color: #c0c0c0;
+  border-top: 0.3vh solid #808080; 
+  display: flex;
+  align-items: center;
+  padding: 0 1vw; 
+  box-sizing: border-box;
+}
+
+
+
+
+.start-button {
+  width: 6vw;
+  height: 80%; 
+  background-color: #c0c0c0;
+  border: 0.3vh solid #fff;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  width: auto
+}
+
+
+.start-button .windows-large {
+  width: 100%;
+  height: 100%; 
+}
+
+.start-button .windows-small{
+  display:none
+}
+
+.taskbar-icons {
+  margin-left: 1vw; 
+  display: flex;
+  gap: 1vw; 
+  height: 100%;
+  align-items: center;
+}
+
+.taskbar-icons .icon {
+  width: 4vw;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.taskbar-clock {
+  margin-left: auto; 
+  padding: 0.3vh 0.6vw;
+  font-size: 2vh; 
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+  width: auto; 
+
+  border: 2px solid #808080;
+  border-top-color: #ffffff;
+  border-left-color: #ffffff;
+  border-bottom-color: #404040;
+  border-right-color: #404040;
+  background-color: #c0c0c0;
+}
+
+.popup {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  width: 50vw;
+  background-color: #c0c0c0;
+  border: 3px solid #808080;
+  box-shadow: 4px 4px #404040;
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+  z-index: 10;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000080;
+  color: white;
+  padding: 0.5rem;
+  font-weight: bold;
+  cursor: move
+}
+
+.popup-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: url('/Photos/hand-mouse.png') 16 16, auto;
+}
+
+.popup-content {
+  padding: 1rem;
+  background-color: #c0c0c0;
+  align-items: center;
+}
