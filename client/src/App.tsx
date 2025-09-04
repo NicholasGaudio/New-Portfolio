@@ -51,6 +51,11 @@ const App: React.FC = () => {
             <span>Github</span>
           </a>
 
+          <a href="mailto:ngaudio0920@gmail.com" target="_blank" rel="noopener noreferrer" className = "icon"> 
+            <img src = "/Photos/email.png"/>
+            <span>Email</span>
+          </a>
+
           {showAbout && (
             <DraggablePopup
               title="About Me"
@@ -61,15 +66,16 @@ const App: React.FC = () => {
 
           {showPC && (
             <DraggablePopup
-              title="My PC"
+              title="My Computer"
               content={
                 <div>
-                  <p>hi</p>
-                  <div className = "about-icons">
-                    <img src = "/Photos/AWS.png"/>
-                    <img src = "/Photos/Unity.png"/>
-                    <img src = "/Photos/Python.png"/>
-                    <img src = "/Photos/Pygame.png"/>
+                  <p>This portfolio website utilizes a MongoDB database to hold my projects info, github links, and more. The backend runs on Python's FastAPI and the hosting is done through AWS lightsail. Enjoy!</p>
+                  <div className = "pc-icons">
+                    <img src = "/Photos/pixel-mongo.png"/>
+                    <img src = "/Photos/pixel-python.png"/>
+                    <img src = "/Photos/pixel-node.png"/>
+                    <img src = "/Photos/pixel-react.png"/>
+                    <img src = "/Photos/FASTAPI.png"/>
                   </div>
                 </div>
               }

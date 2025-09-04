@@ -155,24 +155,25 @@
 }
 
 .popup-content {
+  font-size: larger;
   padding: 1rem;
   background-color: #c0c0c0;
   align-items: center;
 }
 
-.about-icons {
+.pc-icons {
   display: flex;
   gap: 1rem; /* space between icons */
   margin-top: 1rem;
   justify-content: center;
 }
 
-.about-icons img {
+.pc-icons img {
   flex: 0 0 auto;
-  width: 5vw; /* size of icons */
+  width: 3vw; /* size of icons */
   transition: transform 0.2s ease;
 }
 
-.about-icons img:hover {
+.pc-icons img:hover {
   transform: scale(1.1); /* subtle hover zoom */
 }
