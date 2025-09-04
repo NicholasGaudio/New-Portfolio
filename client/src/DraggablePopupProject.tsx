@@ -7,32 +7,32 @@ interface DraggablePopupProps {
   onClose: () => void;
 }
 
-const DraggablePopup: React.FC<DraggablePopupProps> = ({ title, content, onClose }) => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+const DraggablePopupProject: React.FC<DraggablePopupProps> = ({ title, content, onClose}) => {
+  const [position, setPosition] = useState({ x: 200, y: 100 });
   const [isDragging, setIsDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const popupRef = useRef<HTMLDivElement | null>(null);
+  const [size, setSize] = useState({ width: 0, height: 0 });
 
-  // Randomize initial position within desktop bounds
   useEffect(() => {
-    if (!popupRef.current) return;
-    const popupRect = popupRef.current.getBoundingClientRect();
-    const desktop = popupRef.current.parentElement;
-    if (!desktop) return;
-    const desktopRect = desktop.getBoundingClientRect();
+  const desktop = popupRef.current?.parentElement;
+  if (!desktop) return;
 
-    const maxX = desktopRect.width - popupRect.width;
-    const maxY = desktopRect.height - popupRect.height;
+  const desktopRect = desktop.getBoundingClientRect();
+  const popupRect = popupRef.current.getBoundingClientRect();
 
-    const randomX = Math.floor(Math.random() * maxX);
-    const randomY = Math.floor(Math.random() * maxY);
+  setPosition({
+    x: (desktopRect.width - popupRect.width) / 2, // center horizontally
+    y: 0, // spawn at the very top
+  });
+}, []);
 
-    setPosition({ x: randomX, y: randomY });
-  }, []);
 
   const startDrag = (e: React.MouseEvent) => {
     e.preventDefault();
     setIsDragging(true);
+
+    // Calculate offset relative to the popup
     setOffset({
       x: e.clientX - position.x,
       y: e.clientY - position.y,
@@ -47,9 +47,11 @@ const DraggablePopup: React.FC<DraggablePopupProps> = ({ title, content, onClose
       const desktopRect = desktop.getBoundingClientRect();
       const popupRect = popupRef.current.getBoundingClientRect();
 
+      // Calculate new position relative to desktop
       let newX = e.clientX - offset.x - desktopRect.left;
       let newY = e.clientY - offset.y - desktopRect.top;
 
+      // Clamp position so popup stays inside desktop
       newX = Math.max(0, Math.min(newX, desktopRect.width - popupRect.width));
       newY = Math.max(0, Math.min(newY, desktopRect.height - popupRect.height));
 
@@ -66,11 +68,11 @@ const DraggablePopup: React.FC<DraggablePopupProps> = ({ title, content, onClose
       window.removeEventListener('mousemove', onDrag);
       window.removeEventListener('mouseup', stopDrag);
     };
-  }, [isDragging, offset]);
+  }, [isDragging, offset]); // Include dependencies
 
   return (
     <div
-      className="popup"
+      className={`projects-popup`} 
       ref={popupRef}
       style={{ top: position.y, left: position.x, position: 'absolute' }}
     >
@@ -83,4 +85,4 @@ const DraggablePopup: React.FC<DraggablePopupProps> = ({ title, content, onClose
   );
 };
 
-export default DraggablePopup;
+export default DraggablePopupProject;

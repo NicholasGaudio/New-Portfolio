@@ -1,17 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import DraggablePopup from './DraggablePopup';
+import DraggablePopupProject from './DraggablePopupProject';
+import project from './types/projects'
 import './App.css';
 
 const App: React.FC = () => {
   const [time, setTime] = useState<string>(() => new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
   const [showAbout, setshowAbout] = useState(false)
   const [showPC, setshowPC] = useState(true)
+  const [showProjects, setshowProjects] = useState(false)
+  const [projects, setProjects] = useState<project[]>([]);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setTime(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
     }, 1000);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    fetch('https://api.nicholasgaudio.com/projects/')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Response failed");
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log("API Response:", data);
+        if (data && Array.isArray(data.projects)) {
+          setProjects(data.projects); 
+        } else {
+          console.error("Unexpected response format:", data);
+        }
+      })
   }, []);
 
   
@@ -26,14 +48,14 @@ const App: React.FC = () => {
             <span>My Computer</span>
           </div>
 
-          <div className = "icon"> 
-            <img src = "/Photos/folder.png"/>
-            <span>My Projects</span>
-          </div>
-
           <div className = "icon" onClick= {() => setshowAbout(true)}> 
             <img src = "/Photos/word-logo.png"/>
             <span>About Me</span>
+          </div>
+
+          <div className = "icon"> 
+            <img src = "/Photos/folder.png" onClick={() => setshowProjects(true)}/>
+            <span>My Projects</span>
           </div>
 
           <a href="https://drive.google.com/file/d/1SDE4PWKveuXFHxW4iLIQsHnWw2T3e-tI/view" target="_blank" rel="noopener noreferrer" className = "icon"> 
@@ -55,40 +77,88 @@ const App: React.FC = () => {
             <img src = "/Photos/email.png"/>
             <span>Email</span>
           </a>
-
-          {showAbout && (
-            <DraggablePopup
-              title="About Me"
-              content={<p>About MEEE</p>}
-              onClose={() => setshowAbout(false)}
-            />
-          )}
-
-          {showPC && (
-            <DraggablePopup
-              title="My Computer"
-              content={
-                <div>
-                  <p> This portfolio is powered by a MongoDB database that stores all my project details, GitHub links, and more. 
-                    The backend was built with Python’s FastAPI, while the frontend was crafted using Node.js and React. 
-                    The hosting was done through AWS Lightsail. </p> 
-                  <p><strong>Thanks for visiting, and enjoy exploring my work!</strong> </p>                  
-                  <div className = "pc-icons">
-                    <img src = "/Photos/pixel-mongo.png"/>
-                    <img src = "/Photos/pixel-python.png"/>
-                    <img src = "/Photos/pixel-node.png"/>
-                    <img src = "/Photos/pixel-react.png"/>
-                    <img src = "/Photos/FASTAPI.png"/>
-                    <img src = "/Photos/pixel-aws.png"/>
-                  </div>
-                </div>
-              }
-              onClose={() => setshowPC(false)}
-            />
-          )}
-
       </div>
-        
+
+    {showAbout && (
+      <DraggablePopup
+        title="About Me: Nicholas Gaudio"
+        content={
+          <div>
+            <div className = "headshot">
+              <img src = "/Photos/pixel-nick.png"/>
+            </div>
+            <p> I'm a third-year Computer Science major at the University of Florida with a minor in Digital Arts and Sciences.
+              I have a passion for building full-stack applications as well as games! 
+              In my free time, I enjoy playing music, working out, and developing some personal projects. 
+              Check them out in the projects folder!</p>
+            <p><strong>WORK EXPERIENCE</strong></p>   
+            <div className = "experience-icons">
+                <img src = "/Photos/pixel-GE.png"/>
+                <img src = "/Photos/pixel-UF.png"/>
+                <img src = "/Photos/pixel-QE.png"/>
+            </div>             
+          </div>
+        }
+        onClose={() => setshowAbout(false)}
+      />
+    )}
+
+    {showPC && (
+      <DraggablePopup
+        title="My Computer"
+        content={
+          <div>
+            <p> This portfolio is powered by a MongoDB database that stores all my project details, GitHub links, and more. 
+              The backend was built with Python’s FastAPI, while the frontend was crafted using Node.js and React. 
+              The hosting was done through AWS Lightsail. </p> 
+            <p><strong>Thanks for visiting, and enjoy exploring my work!</strong> </p>                  
+            <div className = "pc-icons">
+              <img src = "/Photos/pixel-mongo.png"/>
+              <img src = "/Photos/pixel-python.png"/>
+              <img src = "/Photos/pixel-node.png"/>
+              <img src = "/Photos/pixel-react.png"/>
+              <img src = "/Photos/FASTAPI.png"/>
+              <img src = "/Photos/pixel-aws2.png"/>
+              <img src = "/Photos/pixel-PS.png"/>
+            </div>
+          </div>
+        }
+        onClose={() => setshowPC(false)}
+      />
+    )}
+
+    {showProjects && (
+      <DraggablePopupProject
+        title="My Projects"
+        content={
+          <div>
+            <div className="projects-content">
+              {projects.map((project) => (
+                <a key={project.id} className="project-item" href= {project.projectLink} target="_blank" rel="noopener noreferrer">
+                  <div className='project-details'>
+                    <div className="project-title">
+                      <h2>
+                        {project.name}: <span> {project.timeFrame}</span> 
+                      </h2>
+                    </div>
+                    <div className="content-tools">
+                      {project.projectTools.map((tool, index) => (
+                      <img key={index} src={tool} alt={`Tool ${index}`} className="tool-image"/>
+                      ))}
+                    </div>
+                    <div className="content-description">
+                      <p>{project.description}</p>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        }
+        onClose={() => setshowProjects(false)}
+      />
+    )}
+
       <div className="taskbar">
         <div className="start-button">
           <img src="/Photos/window start.png" className="windows-large" />
