@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react';
 import DraggablePopup from './DraggablePopup';
 import DraggablePopupProject from './DraggablePopupProject';
 import project from './types/projects'
-import './App.css';
+import "./CSS/App.css";
+import "./CSS/Taskbar.css";
+import "./CSS/PopupGeneral.css";
+import "./CSS/PopupAbout.css";
+import "./CSS/PopupProject.css";
+import "./CSS/PopupPC.css";
 
 const App: React.FC = () => {
   const [time, setTime] = useState<string>(() => new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
@@ -91,7 +96,7 @@ const App: React.FC = () => {
               I have a passion for building full-stack applications as well as games! 
               In my free time, I enjoy playing music, working out, and developing some personal projects. 
               <strong>Check them out in the projects folder!</strong></p>
-            <p><strong>WORK EXPERIENCE</strong></p>   
+            {/* <p><strong>WORK EXPERIENCE</strong></p>    */}
             <div className = "experience-icons">
                 <img src = "/Photos/pixel-GE.png"/>
                 <img src = "/Photos/pixel-UF.png"/>

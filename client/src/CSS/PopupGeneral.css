@@ -1,0 +1,73 @@
+.popup {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  width: 50vw;
+  background-color: #c0c0c0;
+  border: 3px solid #808080;
+  box-shadow: 4px 4px #404040;
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+  z-index: 10;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000080;
+  color: white;
+  padding: 0.5rem;
+  font-weight: bold;
+  cursor: url('/Photos/move-cursor.png') 16 16, auto;
+
+  position: sticky;   /* 👈 Makes the header stick */
+  top: 0;             /* Stick to the top of the popup */
+  z-index: 1;
+}
+
+.popup-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: url('/Photos/hand-mouse.png') 16 16, auto;
+}
+
+.popup-content {
+  font-size: larger;
+  padding: 1rem;
+  background-color: #c0c0c0;
+  align-items: center;
+}
+
+/* Laptop Size*/
+@media (max-width: 1920px){
+  .popup-content {
+    font-size: medium;
+    padding: 1rem;
+    background-color: #c0c0c0;
+    align-items: center;
+  }
+}
+
+/*Phone Size*/
+@media (max-width: 390px){
+  .popup-content {
+  font-size: small;
+  padding: 1rem;
+  background-color: #c0c0c0;
+  align-items: center;
+  }
+
+  .popup {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  width: 70vw;
+  background-color: #c0c0c0;
+  border: 3px solid #808080;
+  box-shadow: 4px 4px #404040;
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+  z-index: 10;
+}
+}

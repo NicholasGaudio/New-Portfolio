@@ -1,0 +1,24 @@
+.pc-icons {
+  display: flex;
+  gap: 1rem; /* space between icons */
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.pc-icons img {
+  flex: 0 0 auto;
+  width: 3vw; /* size of icons */
+  transition: transform 0.2s ease;
+}
+
+.pc-icons img:hover {
+  transform: scale(1.1); /* subtle hover zoom */
+}
+
+/*Phone Size*/
+@media (max-width: 390px){
+  .pc-icons img {
+    width: 0vw; /* size of icons */
+    height: 0vh;
+  }
+}

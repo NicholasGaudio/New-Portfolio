@@ -1,0 +1,41 @@
+.headshot {
+  display: flex;
+  gap: 1rem; /* space between icons */
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.headshot img {
+  flex: 0 0 auto;
+  width: 10vw; /* size of icons */
+  transition: transform 0.2s ease;
+}
+
+.headshot img:hover {
+  transform: scale(1.1); /* subtle hover zoom */
+}
+
+.experience-icons {
+  display: flex;
+  gap: 1rem; /* space between icons */
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.experience-icons img {
+  flex: 0 0 auto;
+  width: 3vw; /* size of icons */
+  transition: transform 0.2s ease;
+}
+
+.experience-icons img:hover {
+  transform: scale(1.1); /* subtle hover zoom */
+}
+
+/*Phone Size*/
+@media (max-width: 390px){
+  .experience-icons img {
+    width: 0vw; 
+    height: 0vh;
+  }
+}

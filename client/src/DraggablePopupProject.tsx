@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './App.css';
+import './CSS/App.css';
 
 interface DraggablePopupProps {
   title: string;

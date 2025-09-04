@@ -1,0 +1,118 @@
+.projects-popup{
+  position: absolute;
+  width: 85vw;  /* take up most of the screen width */
+  max-height: 90vh; /* limit height */
+  background-color: #c0c0c0;
+  border: 3px solid #808080;
+  box-shadow: 4px 4px #404040;
+  font-family: 'MS Sans Serif', Tahoma, Arial, sans-serif;
+  overflow: auto;
+}
+
+.projects-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 2 equal-width columns */
+  gap: 1rem; /* space between cards */
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Make project items stretch nicely */
+.project-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  background: #e0e0e0;
+  padding: 1rem;
+  border: 2px solid #808080;
+  border-top-color: #fff;
+  border-left-color: #fff;
+  border-bottom-color: #404040;
+  border-right-color: #404040;
+  text-decoration: none;
+  color: black;
+  transition: background 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: url('/Photos/hand-mouse.png') 16 16, auto;
+}
+
+.project-item:hover {
+  background: #c0c0c0;
+  transform: scale(1.05); /* subtle hover zoom */
+}
+
+/* Text details */
+.project-details {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* take up remaining space */
+}
+
+/* Project title */
+.project-title h2 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Timeframe text */
+.project-title span{
+  font-size: 1rem;
+  font-style: italic;
+  margin: 0 0 0.5rem 0;
+}
+
+/* Description */
+.project-details .description {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+/* Tools row */
+.content-tools {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tool-image {
+  flex: 0 0 auto;
+  width: 2vw; /* size of icons */
+  transition: transform 0.2s ease;
+}
+
+.tool-image img:hover {
+  transform: scale(1.1); /* subtle hover zoom */
+}
+
+/* Laptop Size*/
+@media (max-width: 1920px){
+  .projects-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns */
+  gap: 1rem; /* space between cards */
+  padding: 1rem;
+  box-sizing: border-box;
+  }
+}
+
+/*Phone Size*/
+@media (max-width: 390px){
+.projects-content {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 2 equal-width columns */
+  gap: 1rem; /* space between cards */
+  padding: 1rem;
+  box-sizing: border-box;
+  }
+
+  .content-tools img{
+    height: 0vh;
+    width: 0vw;
+  }
+}
