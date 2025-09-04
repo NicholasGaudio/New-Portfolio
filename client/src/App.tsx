@@ -90,7 +90,7 @@ const App: React.FC = () => {
             <p> I'm a third-year Computer Science major at the University of Florida with a minor in Digital Arts and Sciences.
               I have a passion for building full-stack applications as well as games! 
               In my free time, I enjoy playing music, working out, and developing some personal projects. 
-              Check them out in the projects folder!</p>
+              <strong>Check them out in the projects folder!</strong></p>
             <p><strong>WORK EXPERIENCE</strong></p>   
             <div className = "experience-icons">
                 <img src = "/Photos/pixel-GE.png"/>

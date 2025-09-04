@@ -13,22 +13,28 @@ const DraggablePopup: React.FC<DraggablePopupProps> = ({ title, content, onClose
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const popupRef = useRef<HTMLDivElement | null>(null);
 
-  // Randomize initial position within desktop bounds
   useEffect(() => {
-    if (!popupRef.current) return;
-    const popupRect = popupRef.current.getBoundingClientRect();
-    const desktop = popupRef.current.parentElement;
-    if (!desktop) return;
-    const desktopRect = desktop.getBoundingClientRect();
+  if (!popupRef.current) return;
+  const popupRect = popupRef.current.getBoundingClientRect();
+  const desktop = popupRef.current.parentElement;
+  if (!desktop) return;
 
-    const maxX = desktopRect.width - popupRect.width;
-    const maxY = desktopRect.height - popupRect.height;
+  const desktopRect = desktop.getBoundingClientRect();
+  const taskbarHeight = 80; // Approx. height for your taskbar
 
-    const randomX = Math.floor(Math.random() * maxX);
-    const randomY = Math.floor(Math.random() * maxY);
+  // Calculate center position
+  const centerX = (desktopRect.width - popupRect.width) / 2;
+  const centerY = (desktopRect.height - popupRect.height - taskbarHeight) / 2;
 
-    setPosition({ x: randomX, y: randomY });
-  }, []);
+  // Small random offset (±50px)
+  const offsetX = (Math.random() - 0.5) * 100;
+  const offsetY = (Math.random() - 0.5) * 100;
+
+  setPosition({
+    x: Math.max(0, Math.min(centerX + offsetX, desktopRect.width - popupRect.width)),
+    y: Math.max(0, Math.min(centerY + offsetY, desktopRect.height - popupRect.height - taskbarHeight)),
+  });
+}, []);
 
   const startDrag = (e: React.MouseEvent) => {
     e.preventDefault();
