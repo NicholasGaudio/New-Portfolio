@@ -22,8 +22,8 @@ const DraggablePopupProject: React.FC<DraggablePopupProps> = ({ title, content, 
   const popupRect = popupRef.current.getBoundingClientRect();
 
   setPosition({
-    x: (desktopRect.width - popupRect.width) / 2, // center horizontally
-    y: 0, // spawn at the very top
+    x: (desktopRect.width - popupRect.width) / 2,
+    y: 0, 
   });
 }, []);
 

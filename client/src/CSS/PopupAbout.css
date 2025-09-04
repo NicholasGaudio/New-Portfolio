@@ -1,35 +1,35 @@
 .headshot {
   display: flex;
-  gap: 1rem; /* space between icons */
+  gap: 1rem; 
   margin-top: 1rem;
   justify-content: center;
 }
 
 .headshot img {
   flex: 0 0 auto;
-  width: 10vw; /* size of icons */
+  width: 10vw;
   transition: transform 0.2s ease;
 }
 
 .headshot img:hover {
-  transform: scale(1.1); /* subtle hover zoom */
+  transform: scale(1.1); 
 }
 
 .experience-icons {
   display: flex;
-  gap: 1rem; /* space between icons */
+  gap: 1rem; 
   margin-top: 1rem;
   justify-content: center;
 }
 
 .experience-icons img {
   flex: 0 0 auto;
-  width: 3vw; /* size of icons */
+  width: 3vw;
   transition: transform 0.2s ease;
 }
 
 .experience-icons img:hover {
-  transform: scale(1.1); /* subtle hover zoom */
+  transform: scale(1.1); 
 }
 
 /*Phone Size*/
@@ -38,4 +38,9 @@
     width: 0vw; 
     height: 0vh;
   }
+
+  .headshot img {
+    flex: 0 0 auto;
+    width: 20vw; 
+  } 
 }

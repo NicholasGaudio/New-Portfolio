@@ -92,10 +92,12 @@ const App: React.FC = () => {
             <div className = "headshot">
               <img src = "/Photos/pixel-nick.png"/>
             </div>
-            <p> I'm a third-year Computer Science major at the University of Florida with a minor in Digital Arts and Sciences.
-              I have a passion for building full-stack applications as well as games! 
-              In my free time, I enjoy playing music, working out, and developing some personal projects. 
-              <strong>Check them out in the projects folder!</strong></p>
+            <p> I'm a third-year Computer Science major at the University of Florida with a minor in Digital Arts and Sciences. </p>
+            <p>I have a passion for combining my technical and creative interests to build innovative projects.
+              This includes creating music software, full stack applications, and exploring game development.
+              I also found a strong interest in embedded systems through my work at GE Appliances and working with microcontrollers.
+              In my free time, I enjoy playing music, working out, and developing some personal projects. </p>
+            <p><strong>Check them out in the projects folder!</strong></p>
             {/* <p><strong>WORK EXPERIENCE</strong></p>    */}
             <div className = "experience-icons">
                 <img src = "/Photos/pixel-GE.png"/>
