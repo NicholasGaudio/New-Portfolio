@@ -4,8 +4,8 @@ import './App.css';
 
 const App: React.FC = () => {
   const [time, setTime] = useState<string>(() => new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
-  const [showAbout, setshowAbout] = useState(true)
-  const [showPC, setshowPC] = useState(false)
+  const [showAbout, setshowAbout] = useState(false)
+  const [showPC, setshowPC] = useState(true)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -69,13 +69,17 @@ const App: React.FC = () => {
               title="My Computer"
               content={
                 <div>
-                  <p>This portfolio website utilizes a MongoDB database to hold my projects info, github links, and more. The backend runs on Python's FastAPI and the hosting is done through AWS lightsail. Enjoy!</p>
+                  <p> This portfolio is powered by a MongoDB database that stores all my project details, GitHub links, and more. 
+                    The backend was built with Python’s FastAPI, while the frontend was crafted using Node.js and React. 
+                    The hosting was done through AWS Lightsail. </p> 
+                  <p><strong>Thanks for visiting, and enjoy exploring my work!</strong> </p>                  
                   <div className = "pc-icons">
                     <img src = "/Photos/pixel-mongo.png"/>
                     <img src = "/Photos/pixel-python.png"/>
                     <img src = "/Photos/pixel-node.png"/>
                     <img src = "/Photos/pixel-react.png"/>
                     <img src = "/Photos/FASTAPI.png"/>
+                    <img src = "/Photos/pixel-aws.png"/>
                   </div>
                 </div>
               }
