@@ -63,7 +63,7 @@ const App: React.FC = () => {
             <span>My Projects</span>
           </div>
 
-          <a href="https://drive.google.com/file/d/1SDE4PWKveuXFHxW4iLIQsHnWw2T3e-tI/view" target="_blank" rel="noopener noreferrer" className = "icon"> 
+          <a href="https://docs.google.com/document/d/1dA1j5S4IIHOzXn5S8F0m8tM-KkMQxouRaleP8C0SgMw/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className = "icon"> 
             <img src = "/Photos/word-logo.png"/>
             <span>Resume</span>
           </a>
@@ -97,7 +97,7 @@ const App: React.FC = () => {
               This includes creating music software, full stack applications, and exploring game development.
               I also found a strong interest in embedded systems through my work at GE Appliances and working with microcontrollers.
               In my free time, I enjoy playing music, working out, and developing some personal projects. </p>
-            <p><strong>Check them out in the projects folder!</strong></p>
+            <p><strong>Check them out in the projects folder and visit the repos by clicking on them!</strong></p>
             {/* <p><strong>WORK EXPERIENCE</strong></p>    */}
             <div className = "experience-icons">
                 <img src = "/Photos/pixel-GE.png"/>
