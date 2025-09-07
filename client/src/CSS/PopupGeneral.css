@@ -20,8 +20,8 @@
   font-weight: bold;
   cursor: url('/Photos/move-cursor.png') 16 16, auto;
 
-  position: sticky;   /* 👈 Makes the header stick */
-  top: 0;             /* Stick to the top of the popup */
+  position: sticky;  
+  top: 0;            
   z-index: 1;
 }
 

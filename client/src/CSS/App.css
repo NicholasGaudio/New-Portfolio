@@ -45,7 +45,7 @@
 /* Laptop Size*/
 @media (max-width: 1920px){
   .icon img {
-    width: 4vw;    /* little small for laptop, maybe do 4vw for laptop */
+    width: 4vw;   
     max-width: 64px;  
     height: auto;    
   }
@@ -61,7 +61,7 @@
 /*Phone Size*/
 @media (max-width: 390px){
   .icon img {
-    width: 8vw;    /* little small for laptop, maybe do 4vw for laptop */
+    width: 8vw;    
     max-width: 64px;  
     height: auto;    
   }
@@ -74,7 +74,7 @@
   }
 
   .pc-icons img {
-    width: 0vw; /* size of icons */
+    width: 0vw;
     height: 0vh;
   }
 
@@ -88,8 +88,8 @@
 
 .projects-content {
   display: grid;
-  grid-template-columns: repeat(1, 1fr); /* 2 equal-width columns */
-  gap: 1rem; /* space between cards */
+  grid-template-columns: repeat(1, 1fr); 
+  gap: 1rem; 
   padding: 1rem;
   box-sizing: border-box;
   }

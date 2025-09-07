@@ -1,7 +1,7 @@
 .projects-popup{
   position: absolute;
-  width: 85vw;  /* take up most of the screen width */
-  max-height: 90vh; /* limit height */
+  width: 85vw;  
+  max-height: 90vh;
   background-color: #c0c0c0;
   border: 3px solid #808080;
   box-shadow: 4px 4px #404040;
@@ -11,8 +11,8 @@
 
 .projects-content {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 2 equal-width columns */
-  gap: 1rem; /* space between cards */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; 
   padding: 1rem;
   box-sizing: border-box;
 }
@@ -40,14 +40,14 @@
 
 .project-item:hover {
   background: #c0c0c0;
-  transform: scale(1.05); /* subtle hover zoom */
+  transform: scale(1.05); 
 }
 
 /* Text details */
 .project-details {
   display: flex;
   flex-direction: column;
-  flex: 1; /* take up remaining space */
+  flex: 1;
 }
 
 /* Project title */

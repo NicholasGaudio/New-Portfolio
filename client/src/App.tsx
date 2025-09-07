@@ -124,7 +124,7 @@ const App: React.FC = () => {
               <img src = "/Photos/pixel-python.png"/>
               <img src = "/Photos/pixel-node.png"/>
               <img src = "/Photos/pixel-react.png"/>
-              <img src = "/Photos/FASTAPI.png"/>
+              <img src = "/Photos/pixel-fastapi.png"/>
               <img src = "/Photos/pixel-aws2.png"/>
               <img src = "/Photos/pixel-PS.png"/>
             </div>

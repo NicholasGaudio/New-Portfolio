@@ -16,11 +16,7 @@ const DraggablePopupProject: React.FC<DraggablePopupProps> = ({ title, content, 
 
   useEffect(() => {
   const desktop = popupRef.current?.parentElement;
-<<<<<<< HEAD
-  if (!desktop || !popupRef.current) return; 
-=======
   if (!desktop || !popupRef.current) return;
->>>>>>> e572cc467aee4c2d668e7650ed5686e5f5af440f
 
   const desktopRect = desktop.getBoundingClientRect();
   const popupRect = popupRef.current.getBoundingClientRect();
